@@ -4,7 +4,8 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Reflexion/pom.xml" />
+        <option value="$PROJECT_DIR$/springeci/pom.xml" />
       </list>
     </option>
   </component>

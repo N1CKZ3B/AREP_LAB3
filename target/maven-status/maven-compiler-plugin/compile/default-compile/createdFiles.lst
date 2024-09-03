@@ -1,4 +1,14 @@
-com\mycompany\springeci\RestController.class
+com\mycompany\springeci\RequestParam.class
+com\mycompany\reflexion\Test.class
 com\mycompany\springeci\HelloService.class
-com\mycompany\springeci\GetMapping.class
+com\mycompany\reflexion\ClassToBeTested.class
+com\mycompany\springeci\httpServer.class
+com\mycompany\springeci\GreetingController.class
+com\mycompany\reflexion\MainExecutor.class
+com\mycompany\springeci\StaticFiles.class
 com\mycompany\springeci\Springeci.class
+com\mycompany\springeci\GetMapping.class
+com\mycompany\springeci\httpServer$RequestDetails.class
+com\mycompany\reflexion\JUnitECI.class
+com\mycompany\reflexion\Reflexion.class
+com\mycompany\springeci\RestController.class

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Ejemplo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        #getrespmsg, #postrespmsg {
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Formulario de Ejemplo</h1>
+</header>
+
+<main>
+    <section>
+        <h1>Formulario con GET</h1>
+        <form action="/hello">
+            <label for="name">Nombre:</label><br>
+            <input type="text" id="name" name="name" value="Nick"><br><br>
+            <input type="button" value="Enviar" onclick="loadGetMsg()">
+        </form>
+        <div id="getrespmsg"></div>
+    </section>
+
+    <section>
+        <h1>Formulario con POST</h1>
+        <form action="/hellopost">
+            <label for="postname">Nombre:</label><br>
+            <input type="text" id="postname" name="name" value="Nick"><br><br>
+            <input type="button" value="Enviar" onclick="loadPostMsg()">
+        </form>
+        <div id="postrespmsg"></div>
+    </section>
+</main>
+
+<script>
+    function loadGetMsg() {
+        let nameVar = document.getElementById("name").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("getrespmsg").innerHTML =
+            this.responseText;
+        }
+        xhttp.open("GET", "/" + nameVar);
+        xhttp.send();
+    }
+
+    function loadPostMsg(){
+        let nameVar = document.getElementById("postname").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("postrespmsg").innerHTML =
+            this.responseText;
+        }
+        xhttp.open("POST", "/hellopost", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("name=" + nameVar);
+    }
+</script>
+
+</body>
+</html>
