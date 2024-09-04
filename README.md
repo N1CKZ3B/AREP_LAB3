@@ -10,10 +10,10 @@ This project is a Java application that implements a simple HTTP server. The ser
 
 ## Project Structure
 
-* src/main/java/com/mycompany/reflexion: Everything on the reflection topic and a dependency on creating a JUnit class.
-* src/main/java/com/mycompany/springeci/HttpServer.java: HTTP server implementation.
-* src/main/java/com/mycompany/springeci/HelloService.java: REST controller with various endpoints.
-* src/main/resources: Directory for static files.
+* **src/main/java/com/mycompany/reflexion:** Everything on the reflection topic and a dependency on creating a JUnit class.
+* **src/main/java/com/mycompany/springeci/HttpServer.java:** HTTP server implementation.
+* **src/main/java/com/mycompany/springeci/HelloService.java:** REST controller with various endpoints.
+* **src/main/resources:** Directory for static files.
 
 ## Installation
 
@@ -65,7 +65,10 @@ This project is a Java application that implements a simple HTTP server. The ser
     
     ![image](https://github.com/user-attachments/assets/da5f7cd3-5159-4fa5-ad7b-8b5cefbe9cd2)
 
-
+------------------------
+# Author
+ Nicolas Sebastian Achuri Macias
+ 
 
 
      
