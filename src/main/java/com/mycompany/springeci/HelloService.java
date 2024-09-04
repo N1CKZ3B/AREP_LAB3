@@ -5,7 +5,10 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.util.Base64;
+import java.util.Locale;
 
 @RestController
 public class HelloService{
@@ -16,10 +19,12 @@ public class HelloService{
     public static String hello(){
         return "Hello World!";
     }
-    
-    @GetMapping("/mañana")
-    public static String mañana(){
-        return "Mañana es viernes";
+
+    @GetMapping("/tomorrow")
+    public static String tomorrow() {
+        LocalDate tomorrow = LocalDate.now().plusDays(1);
+        String dayOfWeek = tomorrow.getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("es", "ES"));
+        return "Mañana es " + dayOfWeek;
     }
     
     @GetMapping("/euler")
@@ -37,17 +42,33 @@ public class HelloService{
         return "Hola, " + name ;
     }
 
+    /**
+     * Serves the index.html file.
+     *
+     * @return the content of the index.html file
+     */
     @GetMapping("/")
     public static String serveIndex() {
         return getStaticFileContent("index.html");
     }
 
-
+    /**
+     * Serves a static file with the specified file name.
+     *
+     * @param fileName the name of the file to serve
+     * @return the content of the specified file
+     */
     @GetMapping("/staticfile")
     public static String serveStaticContent(@RequestParam(value = "file", defaultValue = "index.html") String fileName) {
         return getStaticFileContent(fileName);
     }
 
+    /**
+     * Reads the content of a static file and returns it as a string.
+     *
+     * @param fileName the name of the file to read
+     * @return the content of the file
+     */
     static String getStaticFileContent(String fileName) {
         File file = new File(STATIC_FILES_DIR + File.separator + fileName);
 
@@ -80,13 +101,15 @@ public class HelloService{
         }
     }
 
+    /**
+     * Determines the content type of a file based on its extension.
+     *
+     * @param fileName the name of the file
+     * @return the content type of the file
+     */
     private static String determineContentType(String fileName) {
         if (fileName.endsWith(".html")) {
             return "text/html";
-        } else if (fileName.endsWith(".js")) {
-            return "application/javascript";
-        } else if (fileName.endsWith(".css")) {
-            return "text/css";
         } else if (fileName.endsWith(".png")) {
             return "image/png";
         } else if (fileName.endsWith(".jpg") || fileName.endsWith(".jpeg")) {

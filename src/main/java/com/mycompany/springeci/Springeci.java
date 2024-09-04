@@ -46,12 +46,19 @@ public class Springeci {
         Method ms = services.get(serviceName);
         if (ms != null) {
             Object[] argsToPass = extractArguments(ms, query); // Extraer parámetros de la consulta
-            System.out.println("Rta" + ms.invoke(null, argsToPass));
+            System.out.println("Rta: " + ms.invoke(null, argsToPass));
         } else {
-            System.out.println("Servicio no encontrado: " + serviceName);
+            System.out.println("Not Found: " + serviceName);
         }
     }
 
+    /**
+     * Extracts arguments from the query string for the specified method.
+     *
+     * @param method the method for which to extract arguments
+     * @param query the query string containing the parameters
+     * @return an array of arguments to be passed to the method
+     */
     private static Object[] extractArguments(Method method, String query) {
         Map<String, String> queryParams = parseQuery(query);
         Parameter[] parameters = method.getParameters();
@@ -68,6 +75,13 @@ public class Springeci {
         return args;
     }
 
+
+    /**
+     * Parses the query string into a map of parameter names and values.
+     *
+     * @param query the query string to parse
+     * @return a map of parameter names and values
+     */
     private static Map<String, String> parseQuery(String query) {
         Map<String, String> queryParams = new HashMap<>();
         if (query != null) {
