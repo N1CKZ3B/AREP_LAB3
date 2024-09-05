@@ -15,6 +15,21 @@ This project is a Java application that implements a simple HTTP server. The ser
 * **src/main/java/com/mycompany/springeci/HelloService.java:** REST controller with various endpoints.
 * **src/main/resources:** Directory for static files.
 
+## Architecture
+ ```
+C:.
+└───src
+   ├───main
+         ├───java
+         │     └───com
+         │           └───mycompany
+         │                   └───reflexion   
+         |                   └─── springeci
+         └───resources                         
+                             
+
+ ```
+
 ## Installation
 
 1. Clone the repository and navigate through the folder.
