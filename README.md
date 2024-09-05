@@ -65,6 +65,19 @@ This project is a Java application that implements a simple HTTP server. The ser
     
     ![image](https://github.com/user-attachments/assets/da5f7cd3-5159-4fa5-ad7b-8b5cefbe9cd2)
 
+3. Using cmd we are able to see how the service is running
+   * Running the default service
+
+        ![image](https://github.com/user-attachments/assets/6a2edd24-a37c-4c6d-87fe-b4485c794b20)
+
+   * Running Junit class developed through the lecture
+  
+        ![image](https://github.com/user-attachments/assets/aa157933-5435-4f61-af33-d15856315ed9)
+
+
+        
+
+
 ------------------------
 # Author
  Nicolas Sebastian Achuri Macias
